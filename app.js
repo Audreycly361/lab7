@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
 app.use(express.cookieParser('Intro HCI secret key'));
-app.use(express.session());
+app.use(express.session());  
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -38,6 +38,7 @@ if ('development' == app.get('env')) {
 // Add routes here
 app.get('/', index.view);
 app.get('/project/:id', project.view);
+app.get('/viewAlt', index.viewAlt);
 // Example route
 // app.get('/users', user.list);
 
